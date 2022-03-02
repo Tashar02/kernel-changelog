@@ -6,6 +6,23 @@ Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro, Redmi Note 6 Pro
 Compiler: Atom-X Clang 15
 ```
+## Instructions for using the kernel source
+
+```
+If you want to inline Scarlet-X with your rom, kindly use the default branch or ask the maintainer (@Tashar02) about it. Use the dedicated wayne-perf_defconfigs for different camera blobs support.
+
+wayne-perf_defconfig -> newcam
+wayne-old-perf_defconfig -> oldcam
+wayne-oss-perf_defconfig -> osscam
+```
+
+## Flashing Process
+
+* Reboot to recovery
+* Backup your `boot` image (so that you can restore it later to go back to your previous kernel in case something goes wrong).
+* Flash the kernel zip.
+* Reboot to system.
+* Let the device be idle for few mins and use the device.
 
 ## Changelog
 
