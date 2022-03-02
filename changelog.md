@@ -1,6 +1,15 @@
+## Build Information
+
+```
+Kernel: Scarlet-X Kernel
+Type: Stable
+Devices: Mi A2, Mi 6X, Redmi Note 5 Pro, Redmi Note 6 Pro
+Compiler: Atom-X Clang 15
+```
+
 ## Changelog
 
-**Scarlet-v1.0**
+**v1.0**
 
 * Rebased off LA.UM.10.2.r1-03300-SDMXX0.0.
 * Merged ACK v4.19.231.
