@@ -11,7 +11,7 @@ Compiler: Atom-X Clang 15
 
 **v1.0**
 
-* Rebased off LA.UM.10.2.r1-03300-SDMXX0.0.
+* Rebased kernel off LA.UM.10.2.r1-03300-SDM660.0.
 * Merged ACK v4.19.231.
 * Imported S Wifi Drivers based on LA.UM.10.2.r1-03300-SDM660.0.
 * Merged f2fs-stable of jaegeuk/f2fs-stable.
