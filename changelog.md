@@ -5,6 +5,7 @@ Kernel: Scarlet-X Kernel
 Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro, Redmi Note 6 Pro
 Compiler: Atom-X Clang 15
+Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD
 ```
 ## Instructions for using the kernel source
 
