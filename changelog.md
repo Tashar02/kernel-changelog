@@ -6,6 +6,8 @@ Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro, Redmi Note 6 Pro
 Compiler: Atom-X Clang 15
 Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD
+Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
+Kernel Branch: default-QTI, default-QPNP
 ```
 ## Instructions for using the kernel source
 
