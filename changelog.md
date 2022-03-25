@@ -83,7 +83,7 @@ wayne-oss-perf_defconfig -> osscam
 * Enabled BPF JIT.
 * Added and tuned Simple Low Memory Killer (SLMK).
 * Backported binder patches from mainline.
-* Added cpuidle, kgsl, mm, usb, mdss optimizations from @kerneltoast.
+* Added cpuidle, kgsl, mm, usb, mdss optimizations (from @kerneltoast).
 * Added cpumasks for big, LITTLE CPU clusters.
 * Added bi-cluster API to affine IRQs and kthreads to fast CPUs.
 * Affined unbound workqueues to little CPUs by default.
@@ -95,3 +95,25 @@ wayne-oss-perf_defconfig -> osscam
 * Optimized Schedutil CPU governor and set by default.
 * Added schedhorizon CPU governor, synced with latest Schedutil changes and tuned for efficiency.
 * Added some dynamic memory allocation avoidance commits by @kerneltoast.
+
+**v2.0 - 25/03/2022**
+
+* Merged tag `v4.19.236` of android-4.19-stable
+* Upstreamed F2FS from jaegeuk/f2fs-stable.
+* Disabled Spectre-BHB mitigation.
+* Reverted "mm: Perform PID map reads on the little CPU cluster".
+* Disabled zram writeback.
+* Reverted "input: fingerprint: Affine IRQ to the perf CPU cluster"
+* Replaced flex array usage with kvmalloc at selinux.
+* Reworked on the FUSE Passthrough backports.
+* Converted printk -> pr_* at FUSE.
+* Enabled Garbage Collector for user space wakeup sources.
+* Separated capacity margin for boosted tasks.
+* Added SDM636's modified capacity margin by @Reinazhard (works good on SDM660 too).
+* Fixed lavender's xiaomi longcheer imports (Now kernel can be compiled for lavender without any build errors).
+* Omitted CR 2040904 fixes for Schedhorizon.
+* Brought some improvements to the scheduler from k5.4.
+* Reduced verbosity of logging.
+* Enabled Ftrace (as per Android 12's needs).
+* Added the revised warning fix at zstd (from @cyberknight777).
+* Removed URLs from LINUX_COMPILER macro.
