@@ -31,9 +31,9 @@ wayne-oss-perf_defconfig -> osscam
 
 **v1.0 - 02/03/2022**
 
-* Rebased kernel off LA.UM.10.2.r1-03300-SDM660.0.
-* Merged ACK v4.19.231.
-* Imported S Wifi Drivers based on LA.UM.10.2.r1-03300-SDM660.0.
+* Rebased kernel off `LA.UM.10.2.r1-03300-SDM660.0`.
+* Merged ACK `v4.19.231`.
+* Imported S Wifi Drivers based on `LA.UM.10.2.r1-03300-SDM660.0`.
 * Merged f2fs-stable of jaegeuk/f2fs-stable.
 * Added exFAT driver.
 * Debloated wifi drivers.
