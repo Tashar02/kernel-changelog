@@ -29,7 +29,7 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelog
 
-**v1.0**
+**v1.0 - 02/03/2022**
 
 * Rebased kernel off LA.UM.10.2.r1-03300-SDM660.0.
 * Merged ACK v4.19.231.
