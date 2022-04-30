@@ -98,7 +98,7 @@ wayne-oss-perf_defconfig -> osscam
 
 **v2.0 - 25/03/2022**
 
-* Merged tag `v4.19.236` of android-4.19-stable
+* Merged tag `v4.19.236` of android-4.19-stable.
 * Upstreamed F2FS from jaegeuk/f2fs-stable.
 * Disabled Spectre-BHB mitigation.
 * Reverted "mm: Perform PID map reads on the little CPU cluster".
@@ -117,3 +117,34 @@ wayne-oss-perf_defconfig -> osscam
 * Enabled Ftrace (as per Android 12's needs).
 * Added the revised warning fix at zstd (from @cyberknight777).
 * Removed URLs from LINUX_COMPILER macro.
+
+**v3.0 - 30/04/2022**
+
+* Merged tag `v4.19.240` of android-4.19-stable.
+* Merged tag `LA.UM.10.2.1.r1-03600-sdm660.0` of CodeLinaro-4.19 treewide, including wifi and audio drivers.
+* Backported some FUSE patches from mainline.
+* Backported new WireGuard patches from mainline.
+* Rebased the kernel source.
+* Enabled GENERIC_FIND_FIRST_BIT.
+* Improved integer sqrt speed.
+* Re-calculated legacy energy model using freqbench.
+* Removed useless userspace spam from net.
+* Fixed tons of memory leaks.
+* Disabled Qualcomm Thermal Limiter.
+* Reverted "sched: modify capacity_margin for SDM636".
+* Reverted "sched: separate capacity margin for boosted tasks".
+* Skipped superfluous acquire barrier in ttwu.
+* Disabled CPUFreq times driver.
+* Reverted "block: Queue requests on their origin CPU".
+* Reverted "block: Do not wake the request CPU if idle".
+* Limited max active to 1 for the buffer freeing workers at ION.
+* Increased F2FS's checkpoint interval to 200s.
+* Upgraded srandom to upstream version 1.41.0.
+* Enabled Ultra High Speed mode at srandom.
+* Re-enabled PSI & MEMCG.
+* Dropped Simple Low Memory Killer in favor of LMKD.
+* Reverted memory management upstreams by CodeLinaro honoring Google.
+* Implemented Multigenerational LRU from ChromeOS Kernel.
+* Implemented KernelSpace Profile Mode (Visit support group to know how to use it).
+* Rolled back some scheduler backports from k5.4.
+* Added global atomic count to scm call at memlat.
