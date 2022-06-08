@@ -148,3 +148,32 @@ wayne-oss-perf_defconfig -> osscam
 * Implemented KernelSpace Profile Mode (Visit support group to know how to use it).
 * Rolled back some scheduler backports from k5.4.
 * Added global atomic count to scm call at memlat.
+
+**v4.0 - 08/06/2022**
+
+* Merged tag `v4.19.246` of android-4.19-stable.
+* Forbade userspace init from messing with I/O scheduler and load scale of WALT.
+* Removed alarmtimer codes from QTI QMI Rmnet Helpers.
+* Backported some smp2p patches from msm-5.4.
+* Brought improvements to watchdog and process freezing.
+* Limited concurrency of workqueues freeing buffers asynchronously at ION.
+* Backported some memory management patches from mainline.
+* Set ZSTD compression level to 2.
+* Switched back to LZ4 as default zram compression algorithm.
+* Debloated the defconfig further.
+* Switched to step-wise thermal governor.
+* Backported some thermal core driver patches from mainline and msm-5.4.
+* Brought some improvements to the scheduler.
+* Reverted some problematic commits.
+* Set performance mode by default at kprofiles.
+* Brought some improvements to Berkeley Packet Filter.
+* Conditionally compiled SDM660 specific GIC chip data for MPM.
+* Silenced many uneeded logspams.
+* Fixed some warnings from the compiler and sparse.
+* Fixed a memory leak at dmaengine.
+* Passed some new feature modifiers to -march parameter at Makefile.
+* Dropped WQ_HIGHPRI from kgsl-workqueue.
+* Dropped round-robin scheduling for kgsl worker thread.
+* Updated Embedded Trace Macrocell IDs from sdm660-coresight for coresight placeholder.
+* Fixed dead mic and speaker audio during calls.
+* Fixed invalid inode logspam from FUSE.
