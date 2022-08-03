@@ -29,6 +29,41 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelog
 
+**v5.0 - DATE N/A**
+
+* Merged tag `v4.19.254` of ACK's android-4.19-stable branch.
+* Upstreamed F2FS from ACK's `f2fs-stable` branch.
+* Merged tag `LA.UM.10.2.1.r1-04000-sdm660.0` from CodeLinaro's msm-4.19 branch.
+* Fixed data corruption at certain apps.
+* Redid the FUSE backports.
+* Backported RNG from mainline.
+* Disabled SRANDOM and switched to HW_RANDOM.
+* Brought minor improvements to scheduler.
+* Fixed big cluster shutting down below 10% battery.
+* Backported some devfreq patches from msm-5.10.
+* Switched to latest implementation to configure USB data.
+* Micro optimized DesignWare USB3 DRD Core.
+* Prevented reordering of some I/O writes.
+* Backported latest LZ4 patch from mainline.
+* Backported latest WireGuard patch from mainline.
+* Micro optimized compiler instructions.
+* Updated DTC to upstream version v1.6.1-44-ged31080.
+* Backported some mm patches from mainline.
+* Backported some KGSL patches from msm-5.10.
+* Brought improvements to F2FS.
+* Improved kernel logs dumping during panic.
+* Backported some pstore patches from mainline.
+* Micro optimized interrupt path of FPC fingerprint driver.
+* Riced smb1351 charger driver from Moto Kernel.
+* Backported binder from android12-5.10-lts.
+* Removed more debugs from binder.
+* Converted some locks to raw spin locks.
+* Micro optimized and fixed wakeup event logic for Novatek Panels.
+* Debloated QCACLD.
+* Debloated defconfigs.
+* Debloated the clock drivers.
+* Compiled out useless MDSS PLLs and adreno drivers.
+
 **v4.0 - 08/06/2022**
 
 * Merged tag `v4.19.246` of android-4.19-stable.
