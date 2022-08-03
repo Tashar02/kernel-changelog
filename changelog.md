@@ -21,21 +21,22 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Flashing Process
 
-* Reboot to recovery
+* Reboot to recovery.
 * Backup your `boot` image (so that you can restore it later to go back to your previous kernel in case something goes wrong).
 * Flash the kernel zip.
 * Reboot to system.
 * Let the device be idle for few mins and use the device.
 
-## Changelog
+## Changelogs
 
 **v5.0 - DATE N/A**
 
-* Merged tag `v4.19.254` of ACK's android-4.19-stable branch.
-* Upstreamed F2FS from ACK's `f2fs-stable` branch.
+* Merged tag `v4.19.254` from ACK's android-4.19-stable branch.
 * Merged tag `LA.UM.10.2.1.r1-04000-sdm660.0` from CodeLinaro's msm-4.19 branch.
+* Upstreamed F2FS from ACK's `upstream-f2fs-stable-linux-4.19.y` branch.
 * Fixed data corruption at certain apps.
 * Redid the FUSE backports.
+* Revised commit "irqchip: Conditionally compiled SDM660 specific GIC chip data for MPM".
 * Backported RNG from mainline.
 * Disabled SRANDOM and switched to HW_RANDOM.
 * Brought minor improvements to scheduler.
@@ -66,7 +67,7 @@ wayne-oss-perf_defconfig -> osscam
 
 **v4.0 - 08/06/2022**
 
-* Merged tag `v4.19.246` of android-4.19-stable.
+* Merged tag `v4.19.246` from ACK's android-4.19-stable branch.
 * Forbade userspace init from messing with I/O scheduler and load scale of WALT.
 * Removed alarmtimer codes from QTI QMI Rmnet Helpers.
 * Backported some smp2p patches from msm-5.4.
@@ -95,8 +96,8 @@ wayne-oss-perf_defconfig -> osscam
 
 **v3.0 - 30/04/2022**
 
-* Merged tag `v4.19.240` of android-4.19-stable.
-* Merged tag `LA.UM.10.2.1.r1-03600-sdm660.0` of CodeLinaro-4.19 treewide, including wifi and audio drivers.
+* Merged tag `v4.19.240` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.10.2.1.r1-03600-sdm660.0` CodeLinaro's msm-4.19 branch treewide, including wifi and audio drivers.
 * Backported some FUSE patches from mainline.
 * Backported new WireGuard patches from mainline.
 * Rebased the kernel source.
@@ -126,8 +127,8 @@ wayne-oss-perf_defconfig -> osscam
 
 **v2.0 - 25/03/2022**
 
-* Merged tag `v4.19.236` of android-4.19-stable.
-* Upstreamed F2FS from jaegeuk/f2fs-stable.
+* Merged tag `v4.19.236` of ACK's android-4.19-stable branch.
+* Upstreamed F2FS from ACK's `upstream-f2fs-stable-linux-4.19.y` branch.
 * Disabled Spectre-BHB mitigation.
 * Reverted "mm: Perform PID map reads on the little CPU cluster".
 * Disabled zram writeback.
@@ -148,9 +149,9 @@ wayne-oss-perf_defconfig -> osscam
 
 **v1.0 - 02/03/2022**
 
-* Rebased kernel off `LA.UM.10.2.r1-03300-SDM660.0`.
-* Merged ACK `v4.19.231`.
-* Imported S Wifi Drivers based on `LA.UM.10.2.r1-03300-SDM660.0`.
+* Rebased kernel off `LA.UM.10.2.r1-03300-SDM660.0` from CodeLinaro's msm-4.19 branch.
+* Merged tag `v4.19.231` of ACK's android-4.19-stable branch.
+* Imported Android-12 Wifi Drivers based on `LA.UM.10.2.r1-03300-SDM660.0` CLO tag.
 * Merged f2fs-stable of jaegeuk/f2fs-stable.
 * Added exFAT driver.
 * Debloated wifi drivers.
@@ -188,7 +189,7 @@ wayne-oss-perf_defconfig -> osscam
 * Optimized inlining.
 * Lower kernel gzip compression to fastest.
 * Added some fq_codel backports (from @Panchajanya1999).
-* Added srandom.
+* Added SRANDOM.
 * Added BFQ upstream patches (from @Reinazhard) & enabled BFQ.
 * Backported some Kyber patches from mainline & set as default I/O Scheduler.
 * Backported kallsyms from mainline.
