@@ -29,6 +29,88 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelog
 
+**v4.0 - 08/06/2022**
+
+* Merged tag `v4.19.246` of android-4.19-stable.
+* Forbade userspace init from messing with I/O scheduler and load scale of WALT.
+* Removed alarmtimer codes from QTI QMI Rmnet Helpers.
+* Backported some smp2p patches from msm-5.4.
+* Brought improvements to watchdog and process freezing.
+* Limited concurrency of workqueues freeing buffers asynchronously at ION.
+* Backported some memory management patches from mainline.
+* Set ZSTD compression level to 2.
+* Switched back to LZ4 as default zram compression algorithm.
+* Debloated the defconfig further.
+* Switched to step-wise thermal governor.
+* Backported some thermal core driver patches from mainline and msm-5.4.
+* Brought some improvements to the scheduler.
+* Reverted some problematic commits.
+* Set performance mode by default at kprofiles.
+* Brought some improvements to Berkeley Packet Filter.
+* Conditionally compiled SDM660 specific GIC chip data for MPM.
+* Silenced many uneeded logspams.
+* Fixed some warnings from the compiler and sparse.
+* Fixed a memory leak at dmaengine.
+* Passed some new feature modifiers to -march parameter at Makefile.
+* Dropped WQ_HIGHPRI from kgsl-workqueue.
+* Dropped round-robin scheduling for kgsl worker thread.
+* Updated Embedded Trace Macrocell IDs from sdm660-coresight for coresight placeholder.
+* Fixed dead mic and speaker audio during calls.
+* Fixed invalid inode logspam from FUSE.
+
+**v3.0 - 30/04/2022**
+
+* Merged tag `v4.19.240` of android-4.19-stable.
+* Merged tag `LA.UM.10.2.1.r1-03600-sdm660.0` of CodeLinaro-4.19 treewide, including wifi and audio drivers.
+* Backported some FUSE patches from mainline.
+* Backported new WireGuard patches from mainline.
+* Rebased the kernel source.
+* Enabled GENERIC_FIND_FIRST_BIT.
+* Improved integer sqrt speed.
+* Re-calculated legacy energy model using freqbench.
+* Removed useless userspace spam from net.
+* Fixed tons of memory leaks.
+* Disabled Qualcomm Thermal Limiter.
+* Reverted "sched: modify capacity_margin for SDM636".
+* Reverted "sched: separate capacity margin for boosted tasks".
+* Skipped superfluous acquire barrier in ttwu.
+* Disabled CPUFreq times driver.
+* Reverted "block: Queue requests on their origin CPU".
+* Reverted "block: Do not wake the request CPU if idle".
+* Limited max active to 1 for the buffer freeing workers at ION.
+* Increased F2FS's checkpoint interval to 200s.
+* Upgraded srandom to upstream version 1.41.0.
+* Enabled Ultra High Speed mode at srandom.
+* Re-enabled PSI & MEMCG.
+* Dropped Simple Low Memory Killer in favor of LMKD.
+* Reverted memory management upstreams by CodeLinaro honoring Google.
+* Implemented Multigenerational LRU from ChromeOS Kernel.
+* Implemented KernelSpace Profile Mode (Visit support group to know how to use it).
+* Rolled back some scheduler backports from k5.4.
+* Added global atomic count to scm call at memlat.
+
+**v2.0 - 25/03/2022**
+
+* Merged tag `v4.19.236` of android-4.19-stable.
+* Upstreamed F2FS from jaegeuk/f2fs-stable.
+* Disabled Spectre-BHB mitigation.
+* Reverted "mm: Perform PID map reads on the little CPU cluster".
+* Disabled zram writeback.
+* Reverted "input: fingerprint: Affine IRQ to the perf CPU cluster"
+* Replaced flex array usage with kvmalloc at selinux.
+* Reworked on the FUSE Passthrough backports.
+* Converted printk -> pr_* at FUSE.
+* Enabled Garbage Collector for user space wakeup sources.
+* Separated capacity margin for boosted tasks.
+* Added SDM636's modified capacity margin by @Reinazhard (works good on SDM660 too).
+* Fixed lavender's xiaomi longcheer imports (Now kernel can be compiled for lavender without any build errors).
+* Omitted CR 2040904 fixes for Schedhorizon.
+* Brought some improvements to the scheduler from k5.4.
+* Reduced verbosity of logging.
+* Enabled Ftrace (as per Android 12's needs).
+* Added the revised warning fix at zstd (from @cyberknight777).
+* Removed URLs from LINUX_COMPILER macro.
+
 **v1.0 - 02/03/2022**
 
 * Rebased kernel off `LA.UM.10.2.r1-03300-SDM660.0`.
@@ -95,85 +177,3 @@ wayne-oss-perf_defconfig -> osscam
 * Optimized Schedutil CPU governor and set by default.
 * Added schedhorizon CPU governor, synced with latest Schedutil changes and tuned for efficiency.
 * Added some dynamic memory allocation avoidance commits by @kerneltoast.
-
-**v2.0 - 25/03/2022**
-
-* Merged tag `v4.19.236` of android-4.19-stable.
-* Upstreamed F2FS from jaegeuk/f2fs-stable.
-* Disabled Spectre-BHB mitigation.
-* Reverted "mm: Perform PID map reads on the little CPU cluster".
-* Disabled zram writeback.
-* Reverted "input: fingerprint: Affine IRQ to the perf CPU cluster"
-* Replaced flex array usage with kvmalloc at selinux.
-* Reworked on the FUSE Passthrough backports.
-* Converted printk -> pr_* at FUSE.
-* Enabled Garbage Collector for user space wakeup sources.
-* Separated capacity margin for boosted tasks.
-* Added SDM636's modified capacity margin by @Reinazhard (works good on SDM660 too).
-* Fixed lavender's xiaomi longcheer imports (Now kernel can be compiled for lavender without any build errors).
-* Omitted CR 2040904 fixes for Schedhorizon.
-* Brought some improvements to the scheduler from k5.4.
-* Reduced verbosity of logging.
-* Enabled Ftrace (as per Android 12's needs).
-* Added the revised warning fix at zstd (from @cyberknight777).
-* Removed URLs from LINUX_COMPILER macro.
-
-**v3.0 - 30/04/2022**
-
-* Merged tag `v4.19.240` of android-4.19-stable.
-* Merged tag `LA.UM.10.2.1.r1-03600-sdm660.0` of CodeLinaro-4.19 treewide, including wifi and audio drivers.
-* Backported some FUSE patches from mainline.
-* Backported new WireGuard patches from mainline.
-* Rebased the kernel source.
-* Enabled GENERIC_FIND_FIRST_BIT.
-* Improved integer sqrt speed.
-* Re-calculated legacy energy model using freqbench.
-* Removed useless userspace spam from net.
-* Fixed tons of memory leaks.
-* Disabled Qualcomm Thermal Limiter.
-* Reverted "sched: modify capacity_margin for SDM636".
-* Reverted "sched: separate capacity margin for boosted tasks".
-* Skipped superfluous acquire barrier in ttwu.
-* Disabled CPUFreq times driver.
-* Reverted "block: Queue requests on their origin CPU".
-* Reverted "block: Do not wake the request CPU if idle".
-* Limited max active to 1 for the buffer freeing workers at ION.
-* Increased F2FS's checkpoint interval to 200s.
-* Upgraded srandom to upstream version 1.41.0.
-* Enabled Ultra High Speed mode at srandom.
-* Re-enabled PSI & MEMCG.
-* Dropped Simple Low Memory Killer in favor of LMKD.
-* Reverted memory management upstreams by CodeLinaro honoring Google.
-* Implemented Multigenerational LRU from ChromeOS Kernel.
-* Implemented KernelSpace Profile Mode (Visit support group to know how to use it).
-* Rolled back some scheduler backports from k5.4.
-* Added global atomic count to scm call at memlat.
-
-**v4.0 - 08/06/2022**
-
-* Merged tag `v4.19.246` of android-4.19-stable.
-* Forbade userspace init from messing with I/O scheduler and load scale of WALT.
-* Removed alarmtimer codes from QTI QMI Rmnet Helpers.
-* Backported some smp2p patches from msm-5.4.
-* Brought improvements to watchdog and process freezing.
-* Limited concurrency of workqueues freeing buffers asynchronously at ION.
-* Backported some memory management patches from mainline.
-* Set ZSTD compression level to 2.
-* Switched back to LZ4 as default zram compression algorithm.
-* Debloated the defconfig further.
-* Switched to step-wise thermal governor.
-* Backported some thermal core driver patches from mainline and msm-5.4.
-* Brought some improvements to the scheduler.
-* Reverted some problematic commits.
-* Set performance mode by default at kprofiles.
-* Brought some improvements to Berkeley Packet Filter.
-* Conditionally compiled SDM660 specific GIC chip data for MPM.
-* Silenced many uneeded logspams.
-* Fixed some warnings from the compiler and sparse.
-* Fixed a memory leak at dmaengine.
-* Passed some new feature modifiers to -march parameter at Makefile.
-* Dropped WQ_HIGHPRI from kgsl-workqueue.
-* Dropped round-robin scheduling for kgsl worker thread.
-* Updated Embedded Trace Macrocell IDs from sdm660-coresight for coresight placeholder.
-* Fixed dead mic and speaker audio during calls.
-* Fixed invalid inode logspam from FUSE.
