@@ -29,7 +29,7 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelogs
 
-**v5.0 - DATE N/A**
+**v5.0 - 05/08/2022**
 
 * Merged tag `v4.19.254` from ACK's android-4.19-stable branch.
 * Merged tag `LA.UM.10.2.1.r1-04000-sdm660.0` from CodeLinaro's msm-4.19 branch.
