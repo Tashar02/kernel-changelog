@@ -29,6 +29,32 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelogs
 
+**v6.0 - 27/09/2022**
+
+* Merged tag `v4.19.259` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.10.2.1.r1-04600-sdm660.0` from CodeLinaro's msm-4.19 branch.
+* Upstreamed F2FS from ACK's `upstream-f2fs-stable-linux-4.19.y` branch.
+* Backported RW Semaphore from Mainline.
+* Fixed a memleak at DesignWare USB3 DRD Core.
+* Disabled preemption before request_fn calls as per jasmine-q-oss.
+* Riced sdcardfs from Moto Kernel.
+* Fixed pageblock heuristic of mm.
+* Backported some zsmalloc and zram patches from mainline.
+* Updated LZ4 module to `v1.9.4`
+* Enabled timer migration.
+* Improved the scheduler.
+* Improved software interrupts.
+* Synced schedhorizon with latest schedutil codes.
+* Added a whitelist for devfreq governors at KGSL.
+* Removed unused debug codes from lpm-levels.
+* Backported binder from ACK's android14-5.15 branch.
+* Micro-optimized compiler specific instructions.
+* Reverted a potential call trace causing use-after-free fix at FUSE.
+* Enabled AICL trip via HDC from smb2 to fix fast charging.
+* Imported Xiaomi changes for pstore from jasmine-q-oss.
+* Aborted reinitialization of failed ramoops.
+* Brought improvements to the ispif and cpp timeout of camera.
+
 **v5.0 - 05/08/2022**
 
 * Merged tag `v4.19.254` from ACK's android-4.19-stable branch.
