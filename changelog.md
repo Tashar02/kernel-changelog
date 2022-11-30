@@ -7,16 +7,24 @@ Devices: Mi A2, Mi 6X, Redmi Note 5 Pro & Redmi Note 6 Pro
 Compiler: Neutron Clang 16
 Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 16
 Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
-Kernel Branch: default-QTI, default-QPNP
+Kernel Branches: a13/dynamic, a13/qti-haptics, a13/qpnp-haptics, inline/dynamic, inline/qti-haptics
 ```
-## Instructions for using the kernel source
+## Instructions for using the kernel source and choosing the appropriate branch
 
 ```
-If you want to inline Scarlet-X with your rom, kindly use the default branch or ask the maintainer (@Tashar02) about it. Use the dedicated wayne-perf_defconfigs for different camera blobs support.
+a13/dynamic: Supports dynamic partition, qti-haptics.
+a13/qti-haptics: Supports qti-haptics.
+a13/qpnp-haptics: Supports qpnp-haptics.
+inline/dynamic: Supports inlining `a13/dynamic` with a rom using old compilers.
+inline/qti-haptics: Supports inlining `a13/qti-haptics` with a rom using old compilers.
+
+• Use the dedicated wayne-perf_defconfig(s) for different camera blobs support on Mi A2 / Mi 6X.
 
 wayne-perf_defconfig -> newcam
 wayne-old-perf_defconfig -> oldcam
 wayne-oss-perf_defconfig -> osscam
+
+Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion .
 ```
 
 ## Flashing Process
@@ -25,7 +33,7 @@ wayne-oss-perf_defconfig -> osscam
 * Backup your `boot` image (so that you can restore it later to go back to your previous kernel in case something goes wrong).
 * Flash the kernel zip.
 * Reboot to system.
-* Let the device be idle for few mins and use the device.
+* Let the device idle for a few mins and use the device.
 
 ## Changelogs
 
@@ -36,9 +44,9 @@ wayne-oss-perf_defconfig -> osscam
 * Upstreamed F2FS from ACK's `upstream-f2fs-stable-linux-4.19.y` branch.
 * Upstreamed exFAT from linux-exfat-oot.
 * Updated Kprofiles to upstream version `5.0.0`.
-* Added backported Jump Label patches from k5.4 (backported by UtsavBalar1231).
+* Added backported Jump Label patches from k5.4 (Backported by UtsavBalar1231).
 * Enabled Jump Label.
-* Added backported locking patches from k5.4 (backported by UtsavBalar1231).
+* Added backported locking patches from k5.4 (Backported by UtsavBalar1231).
 * Synced block patches with ChromeOS-4.19.
 * Backported latest zRAM patches from mainline.
 * Imported ARM64 v8 ASM LZ4 decompression acceleration.
