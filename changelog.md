@@ -29,6 +29,46 @@ wayne-oss-perf_defconfig -> osscam
 
 ## Changelogs
 
+**v7.0 - 01/12/2022**
+
+* Merged tag `v4.19.267` from ACK's android-4.19-stable branch.
+* Merged tags `LA.UM.11.2.1.r1-02500-sdm660.0` & `LA.UM.10.2.1.r1-04900-sdm660.0` from CodeLinaro's msm-4.19 branch treewide, including wifi drivers.
+* Upstreamed F2FS from ACK's `upstream-f2fs-stable-linux-4.19.y` branch.
+* Upstreamed exFAT from linux-exfat-oot.
+* Updated Kprofiles to upstream version `5.0.0`.
+* Added backported Jump Label patches from k5.4 (backported by UtsavBalar1231).
+* Enabled Jump Label.
+* Added backported locking patches from k5.4 (backported by UtsavBalar1231).
+* Synced block patches with ChromeOS-4.19.
+* Backported latest zRAM patches from mainline.
+* Imported ARM64 v8 ASM LZ4 decompression acceleration.
+* Reduced LZ4 memory usage to 1KB.
+* Backported latest random patches from mainline.
+* Backported i2c patches from mainline and msm-5.10.
+* Removed pm_wakeup_event() support at qrtr.
+* Updated DTC to upstream version `v1.6.1-63-g55778a0`.
+* Fixed some minor issues at Makefile.
+* Removed extra reserved space in cpu_hwcaps*.
+* Disabled debug at sdcardfs.
+* Removed duplicate buff_err usage at camera drivers.
+* Fixed uninitialized spinlock usage at qcacld-3.0.
+* Marked availability of FSA4490 i2c node as unlikely.
+* Replaced stub codec with TAS2557 codec.
+* Dropped Atheros WLAN card support.
+* Switched back to using string argument comparison method to fix modem crash.
+* Tuned Simple Low Memory Killer (SLMK).
+* Reverted some scheduler patches.
+* Brought minor improvements to WALT.
+* Increased accuracy of cpuidle predictions.
+* Refactored goodix and fpc fingerprint sensors.
+* Improved charging speed and temperature limits.
+* Cleaned up some Xiaomi changes at power and batterydata drivers.
+* Slightly cleaned up the DTS.
+* Improved haptic feedback.
+* Removed unused reserved memory for wlan_msa_guard.
+* Configured hw based attention light.
+* Added support for dynamic partition.
+
 **v6.0 - 27/09/2022**
 
 * Merged tag `v4.19.259` from ACK's android-4.19-stable branch.
