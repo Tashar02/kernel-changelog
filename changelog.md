@@ -37,6 +37,51 @@ Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion
 
 ## Changelogs
 
+**v8.0 - 11/02/2023**
+
+* Merged tag `v4.19.272` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.11.2.1.r1-03000-sdm660.0` from CodeLinaro's msm-4.19 branch treewide, including wifi drivers.
+* Upstreamed exFAT from linux-exfat-oot.
+* Upstreamed Kprofiles from dakkshesh07/Kprofiles.
+* Imported mm reverts from Google's Redbull kernel.
+* Improved memory management drastically.
+* Tuned Simple Low Memory Killer further.
+* Backported latest zRAM patches from mainline.
+* Backported library optimization patches from mainline.
+* Added support for EROFS (Enhanced Read-Only File System).
+* Increased LZ4 memory usage to 37 KB again.
+* Backported latest kallsyms patches from mainline.
+* Patched qcacld-3.0 and qcacmn for Android 13 VTS.
+* Fully disabled PM QoS at qcacld-3.0 !CLD_PM_QOS.
+* Backported latest binder patches android13-5.10 branch of ACK.
+* Reserved caches for small, high-frequency memory allocations.
+* Robustified compiler hints.
+* Set F2FS uncongestion timeout to 6 ms.
+* Set F2FS GC urgent sleep time to 5 ms.
+* Removed unneeded dynamic memory allocation at EXT4.
+* Improved QoS with Sultan's patches.
+* Do not queue everything on system's power efficient workqueue.
+* Synced and adapted to floral's devfreq boost.
+* Tuned devfreq boosting based on Kprofiles selections.
+* Increased scheduler tick rate to 300 Hz.
+* Enabled support for NTFS.
+* Disabled RAS.
+* Disabled ION_POOL_AUTO_REFILL.
+* Added support for 32 bit DMA_BUF_SET_NAME ioctl.
+* Fixed tons of warnings reported by both Clang and GCC.
+* Reverted some redundant commits.
+* Fixed qos warning at camera.
+* Corrected some GPU frequencies.
+* Imported dts for m6100cos battery of lavender.
+* Tuned charging speed and temperature limits further.
+* Silenced some annoying usb logspams.
+* Refactored Xiaomi's thermal changes.
+* Fixed cpu limits set current frequency.
+* Mirco-optimized the scheduler.
+* Removed cpuidle's idle prediction feature.
+* Removed cpuidle's sleep bias feature.
+* Enforced cpuidle to use WFI only.
+
 **v7.0 - 01/12/2022**
 
 * Merged tag `v4.19.267` from ACK's android-4.19-stable branch.
