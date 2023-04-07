@@ -37,6 +37,49 @@ Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion
 
 ## Changelogs
 
+**v9.0 - 22/04/2023 [EID MUBARAK]**
+* Merged tag `v4.19.280` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.11.2.1.r1-03400-sdm660.0` from CodeLinaro's msm-4.19 branch treewide, including wifi and audio drivers.
+* Upstreamed exFAT to namjaejeon/linux-exfat-oot.
+* Upstreamed Kprofiles to `v5.0.3`.
+* Updated DTC to upstream version `v1.7.0-19-g2cdf93a`.
+* Fixed remaining compiler warnings.
+* Reverted many useless patches.
+* Backported latest hwrng patches from mainline.
+* Backported latest random patches from mainline.
+* Backported latest cpufreq stats patches from mainline.
+* Opted for modern assember annotations at some more places.
+* Reverted all fuse backports from linux-5.4 except Fuse Passthrough.
+* Fixed a call trace caused by a prolonged wait time at fuse's request_wait_answer().
+* Implemented high-prio per-CPU kthread workers for EROFS.
+* Cleaned up Xiaomi's horrible F2FS changes.
+* Switched back to normal memory mode for F2FS.
+* Added support to report a fake kernel version to fsck at F2FS.
+* Opted for ARM64 v8 ASM to accelerate lz4 decompression treewide.
+* Reduced SYN resend delay at TCP.
+* Switched to SSD mode and entropy gathering.
+* Implemented fast refcount checking.
+* Backported latest RW Semaphore patches from mainline.
+* Improved locking and relaxed tight loops.
+* Micro-optimized the scheduler.
+* Micro-optimized the memory management.
+* Micro-optimized devfreq framework.
+* Mirco-optimized KGSL.
+* Removed a pointless DT property aquisition at adsprprc.
+* Fixed race conditions at adsprpc and qcacmn.
+* Improved camera startup speed.
+* Decreased wakeup event duration at smp2p_sleepstate.
+* Fixed a NULL pointer exception and many dereferences at USB.
+* Fixed a false-positive call trace for IPA v2.
+* Optimized Novatek touchpanel and fingerprint drivers further.
+* Removed deprecated patches for audio-kernel.
+* Built missing audio entries.
+* Fixed incorrect jeita fcc ranges.
+* Re-calculated legacy energy model using freqbench.
+* Dropped useless HDR10 support.
+* Dropped unsupported feature modifiers and crypto extensions for SDM660.
+* Disabled PPP.
+
 **v8.0 - 11/02/2023**
 
 * Merged tag `v4.19.272` from ACK's android-4.19-stable branch.
