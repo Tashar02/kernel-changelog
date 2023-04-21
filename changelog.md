@@ -4,7 +4,7 @@
 Kernel: Scarlet-X Kernel
 Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro & Redmi Note 6 Pro
-Compiler: Neutron Clang 17
+Compiler: Neutron Clang 17 x EVA GCC 14 (for vDSO)
 Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 16
 Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
 Kernel Branches: a13/dynamic, a13/qti-haptics, a13/qpnp-haptics, inline/dynamic, inline/qti-haptics
