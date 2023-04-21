@@ -7,16 +7,14 @@ Devices: Mi A2, Mi 6X, Redmi Note 5 Pro & Redmi Note 6 Pro
 Compiler: Neutron Clang 17 x EVA GCC 14 (for vDSO)
 Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 16
 Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
-Kernel Branches: a13/dynamic, a13/qti-haptics, a13/qpnp-haptics, inline/dynamic, inline/qti-haptics
+Kernel Branches: a13/dynamic, a13/qti-haptics & a13/qpnp-haptics
 ```
 ## Instructions for using the kernel source and choosing the appropriate branch
 
 ```
-a13/dynamic: Supports dynamic partition, qti-haptics.
+a13/dynamic: Supports dynamic partition, EROFS & qti-haptics.
 a13/qti-haptics: Supports qti-haptics.
 a13/qpnp-haptics: Supports qpnp-haptics.
-inline/dynamic: Supports inlining `a13/dynamic` with a rom using old compilers.
-inline/qti-haptics: Supports inlining `a13/qti-haptics` with a rom using old compilers.
 
 • Use the dedicated wayne-perf_defconfig(s) for different camera blobs support on Mi A2 / Mi 6X.
 
@@ -24,7 +22,7 @@ wayne-perf_defconfig -> newcam
 wayne-old-perf_defconfig -> oldcam
 wayne-oss-perf_defconfig -> osscam
 
-Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion .
+Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion.
 ```
 
 ## Flashing Process
