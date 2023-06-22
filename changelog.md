@@ -4,7 +4,7 @@
 Kernel: Scarlet-X Kernel
 Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro & Redmi Note 6 Pro
-Compiler: Neutron Clang 17 x EVA GCC 14 (for vDSO)
+Compiler: Neutron Clang 17
 Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 17
 Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
 Kernel Branches: a13/dynamic, a13/qti-haptics & a13/qpnp-haptics
@@ -34,6 +34,53 @@ Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion
 * Let the device idle for a few mins and use the device.
 
 ## Changelogs
+
+**v10.0 - 06/07/2023**
+* Merged tag `v4.19.288` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.11.2.1.r1-04100-sdm660.0` from CodeLinaro's msm-4.19 branch treewide, including wifi and audio drivers.
+* Backported RCU from linux-5.4.
+* Offloaded RCU callback processing from all CPUs.
+* Made the RCU grace period workers unbound again.
+* Backported some irq_work patches from mainline.
+* Backported jump label from mainline.
+* Backported latest binder patches from mainline.
+* Fixed some UAF, NULL pointer dereference and memory leaks in thermal/core.
+* Backported zsmalloc from mainline.
+* Merged latest changes for Simple Low Memory Killer (SLMK).
+* Eliminated dynamic memory allocation at getcwd() system call in vfs.
+* Set LZ4 memory usage conditionally based on EROFS's availability.
+* Disabled USB LPM on bus_suspend with ADB.
+* Added hibernation support for rtc-pm8xxx.
+* Forwardported MSM UART High Speed Serial Driver from linux-[4.4, 4.9, 4.14].
+* Fixed incorrect usage of PM QoS requests in camera.
+* Optimized memory allocation for small buffers in legacy camera stack.
+* Fixed compiler warnings.
+* Reverted many useless and faulty patches.
+* Reduced freeze timeout to 0.5 seconds at fuse's request_wait_answer().
+* Fixed the incomplete cpuidle patchset from dereference23.
+* Mirco-optimized the scheduler.
+* Fixed cpupri MAX_RT_PRIO evaluation.
+* Ensured the minimal frequency is lower than the maximal frequency for ROMs that come with libperfmgr.
+* Stopped using WQ_CPU_INTENSIVE for verify_wq in dm-verity.
+* Removed PM QoS usage from adsprpc and audio-kernel completely.
+* Added missing FM recording mixer setup.
+* Reduced lsm-client wakelock to 500ms.
+* Fixed incorrect pair of PM operations for ipa_v2.
+* Fixed a faulty error handling in msm bus.
+* Removed the DISABLE_LTO filtering from vDSO.
+* Fixed userspace log filter and silenced some bothersome logs.
+* Implemented userspace vibration control for QTI Haptics.
+* Fixed and optimized regulators handling in fpc fingerprint driver.
+* Fixed fpc fingerprint driver being unable to write to irq sysfs node.
+* Fixed placement of always_inline instructions.
+* Fixed Global and Indian device variant detection algorithm for the power drivers.
+* Removed enforcement of warm reboot.
+* Removed useless boot arguments from the kernel cmdline.
+* Disabled NAN for qcacld-3.0.
+* Disabled media ancillary drivers autoselecting support.
+* Disabled media usb bus support.
+* Enabled BLAKE2b support.
+* Disabled EROFS (for the roms that do not support it).
 
 **v9.0 - 22/04/2023 [EID MUBARAK]**
 * Merged tag `v4.19.280` from ACK's android-4.19-stable branch.
