@@ -4,9 +4,9 @@
 Kernel: Scarlet-X Kernel
 Type: Stable
 Devices: Mi A2, Mi 6X, Redmi Note 5 Pro & Redmi Note 6 Pro
-Compiler: Neutron Clang 17
-Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 17
-Kernel Source: https://github.com/Atom-X-Devs/android_kernel_xiaomi_scarlet
+Compiler: Neutron Clang 18
+Compiler specific optimization goodies: Clang LTO (Full), Polly Optimizer Flags & LLD 18
+Kernel Source: https://github.com/Atom-X-Devs/scarlet_xiaomi_sdm660
 Kernel Branches: a13/dynamic, a13/qti-haptics & a13/qpnp-haptics
 ```
 ## Instructions for using the kernel source and choosing the appropriate branch
@@ -34,6 +34,40 @@ Note: If you have any doubt, ask me (@Tashar02) at https://t.me/AtomX_Discussion
 * Let the device idle for a few mins and use the device.
 
 ## Changelogs
+
+**v11.0 - 08/01/2024**
+* Merged tag `v4.19.303` from ACK's android-4.19-stable branch.
+* Merged tag `LA.UM.12.2.1.r1-02400-sdm660.0` from CodeLinaro's msm-4.19 branch treewide, including wifi and audio drivers.
+* Upstreamed exFAT to namjaejeon/linux-exfat-oot.
+* Upstreamed Kprofiles from dakkshesh07/Kprofiles.
+* Reverted many useless patches.
+* Re-enabled legacy cgroup freezer.
+* Disabled partial update and tear check for display.
+* Switched back to stock charging speeds.
+* Fixed ratiometric range for SDM636/660.
+* Improved FPC fingerprint driver further.
+* Upstreamed wireguard to mainline.
+* Upstreamed uid_sys_stat to android-mainline.
+* Improved memory management further.
+* Fixed UAF and memory leaks in binder.
+* Disabled HAVE_HW_BREAKPOINT.
+* Added optimized helpers for cpumask when NR_CPUS fits in a long.
+* Aligned clear_page() to 16 bytes.
+* Restricted idle CPUs to wake uo unless they are affected by a request change.
+* Eliminated dynamic memory allocation in selinux, f2fs and fscrypt.
+* Removed direct reclaim when allocating memory from bio_endio() in erofs.
+* Removed reserved kmem caches in binder.
+* Disabled Schedhorizon CPU governor.
+* Switched to redbull sched from branch `android-msm-redbull-4.19-u-beta5.3`.
+* Improved the scheduler further.
+* Switched to PELT and fixed PELT's regressions.
+* Implemented Capacity Aware Superset Scheduler (CASS) by Sultan Alsawaf.
+* Imported Sony's softirq changes.
+* Filtered out LibBpfLoader information in dmesg.
+* Silenced debug message during SID population in camera.
+* Stopped register reading that's used for debugging in the adreno driver.
+* Re-calculated legacy energy model using freqbench.
+* Fixed firmware nodes for tulip, whyred and lavender for proper dynamic partition.
 
 **v10.0 - 06/07/2023**
 * Merged tag `v4.19.288` from ACK's android-4.19-stable branch.
