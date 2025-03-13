@@ -30,6 +30,19 @@ xiaomi-qgki_defconfig and redwood.config
 
 ## Changelogs
 
+**v1.1 - 14/03/2025**
+
+* Reset CLO tag for fw-api to `LA.UM.9.14.r1-25500-LAHAINA.QSSI15.0` to fix VoWiFi.
+* Added back necessary input listeners for Goodix touchscreen driver.
+* Fixed some GCC warnings.
+* Disabled unused L2TP.
+* Upstreamed KernelSU to rsuntk/KernelSU.
+* Switched to scope-minimized manual KernelSU hooks.
+* Implemented an LTO-specific version of READ_ONCE() that provides acquire semantics.
+* Disabled wakeup_irq if port is closed for msm_geni_serial.
+* Added some missing mm reverts for PSI.
+* Added support for Userfaultfd GC (ROM requires `ro.dalvik.vm.enable_uffd_gc=True` in system.prop).
+
 **v1.0 - 04/03/2025**
 
 * Rebased the kernel on the CLO tag `LA.UM.9.14.r1-25800-LAHAINA.QSSI15.0`.
