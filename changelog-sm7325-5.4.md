@@ -4,7 +4,7 @@
 Kernel: Scarlet
 Type: Stable
 Devices: POCO X5 Pro / Redmi Note 12 Pro Speed (redwood)
-Compiler: Eva GCC 15.0.1 with Eva Binutils (GNU ld) 2.44.50
+Compiler: Eva GCC 16.0.0 with Eva Binutils (GNU ld) 2.44.50
 Compiler specific optimization: DCE and GCC LTO
 Kernel Source: https://github.com/Atom-X-Devs/scarlet_xiaomi_sm7325.git
 Kernel Branch: redwood
@@ -29,6 +29,50 @@ xiaomi-qgki_defconfig and redwood.config
 * After flashing, unlock the device and let it idle for 2-3 minutes to allow Android processes to properly initialize before using it.
 
 ## Changelogs
+
+**v2.0 - 16/07/2025**
+
+* Rebase kernel on `LA.UM.9.14.r1-26100-LAHAINA.QSSI15.0` with wifi, audio, camera, dataipa, datarmnet, display, video driver from `LA.UM.9.14.r1-26000-LAHAINA.QSSI15.0`.
+* Fix broken VoWiFi originating from fw-api.
+* Redo old mm patchset.
+* Fix build with GCC LTO that requires 4-way interleave using PMULL for crc32.
+* Switch back to deep suspend since s2idle causes black screen of death and reboot when device enters deep sleep when battery is less than 5%.
+* Set ssg's max available ratio back to 100 again.
+* Enable UFS clock scaling.
+* Fix timestamps on panic logs.
+* Fix console-ramoops generation.
+* Fix kernel panic caused by a race in __power_supply_changed_work().
+* Fix kernel panic caused by subsystem crash.
+* Fix stack depot reaching limit capacity by set __exception_irq_entry with __irq_entry as a default.
+* Update lz4 to v1.10.0.
+* Backport zsmalloc from mainline.
+* Backport zram from mainline.
+* Backport timer from linux-6.7.
+* Upstream binder to android-mainline.
+* Upstream EEVDF to mainline.
+* Upstream scheduler to `android14-6.1`.
+* Fix the usage of CPUFREQ_NEED_UPDATE_LIMITS in sched.
+* Port tapered DVFS headroom from gs201 and fine-tune it.
+* Disable big tasks rotation since it negatively affects the active load balancer.
+* Fix tons of uninitialized variables, NULL pointer dereferences and OOB accesses in qcacld-3.0 and qcacmn.
+* Add support for NCM USB tethering.
+* Fix clkgating for ufs.
+* Fix refount leaks in of/irq.
+* Fix a deadlock in USB dwc3 core.
+* Discard contiguous clusters in batches in exfat.
+* Increase priority of glink worker thread.
+* Avoid race for intent lock in glink.
+* Fix various data races in swap code.
+* Introduce __cma_alloc API to avoid prolonged stalls resulting from blocking pages.
+* Remove __GFP_NORETRY flag from kgsl_system_alloc_pages.
+* Fix system crash caused by KASAN with a dirty hack.
+* Introduce Simple Low Memory Killer, fine-tune it and disable PSI.
+* Rewrite goodix fingerprint driver to improve clarity and performance.
+* Update rq stats way less frequently.
+* Rework GPU target frequency calculation for high refresh rates to reduce overly aggresive frequency requests in some games.
+* Use pipes rather than temporary files for intermediate steps.
+* Disable cleancache since we don't have a proper backened or any usability.
+* Upstream KernelSU to rsuntk/KernelSU at commit fea6b79743809.
 
 **v1.1 - 14/03/2025**
 
