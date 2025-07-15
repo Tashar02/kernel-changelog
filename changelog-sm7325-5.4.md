@@ -77,59 +77,59 @@ xiaomi-qgki_defconfig and redwood.config
 **v1.1 - 14/03/2025**
 
 * Reset CLO tag for fw-api to `LA.UM.9.14.r1-25500-LAHAINA.QSSI15.0` to fix VoWiFi.
-* Added back necessary input listeners for Goodix touchscreen driver.
-* Fixed some GCC warnings.
-* Disabled unused L2TP.
-* Upstreamed KernelSU to rsuntk/KernelSU.
-* Switched to scope-minimized manual KernelSU hooks.
-* Implemented an LTO-specific version of READ_ONCE() that provides acquire semantics.
-* Disabled wakeup_irq if port is closed for msm_geni_serial.
-* Added some missing mm reverts for PSI.
-* Added support for Userfaultfd GC (ROM requires `ro.dalvik.vm.enable_uffd_gc=True` in system.prop).
+* Add back necessary input listeners for Goodix touchscreen driver.
+* Fix some GCC warnings.
+* Disable unused L2TP.
+* Upstream KernelSU to rsuntk/KernelSU.
+* Switch to scope-minimized manual KernelSU hooks.
+* Implement an LTO-specific version of READ_ONCE() that provides acquire semantics.
+* Disable wakeup_irq if port is closed for msm_geni_serial.
+* Add some missing mm reverts for PSI.
+* Add support for Userfaultfd GC (ROM requires `ro.dalvik.vm.enable_uffd_gc=True` in system.prop).
 
 **v1.0 - 04/03/2025**
 
-* Rebased the kernel on the CLO tag `LA.UM.9.14.r1-25800-LAHAINA.QSSI15.0`.
-* Added exFAT driver.
-* Added a custom haptic_hv driver (thanks to Divyanshu-Modi).
-* Debloated Wi-Fi drivers.
-* Imported Xiaomi changes while minimizing unnecessary code.
-* Ported the FocalTech 3680 touchscreen driver from ruby-s-oss.
-* Debloated defconfig.
+* Rebase the kernel on the CLO tag `LA.UM.9.14.r1-25800-LAHAINA.QSSI15.0`.
+* Add exFAT driver.
+* Add a custom haptic_hv driver (thanks to Divyanshu-Modi).
+* Debloat Wi-Fi drivers.
+* Import Xiaomi changes while minimizing unnecessary code.
+* Port the FocalTech 3680 touchscreen driver from ruby-s-oss.
+* Debloat defconfig.
 * Set Westwood as the default TCP congestion control algorithm.
 * Set LZ4 as the default zram compression algorithm.
-* Updated dtc to upstream version `v1.7.0-60-g95c74d7`.
-* Optimized various compiler-specific instructions.
-* Fixed all KASAN warnings.
-* Fixed multiple memory leaks.
-* Optimized memory and string utility functions.
-* Fixed various compiler warnings.
-* Improved graphics rendering performance.
-* Switched to SBalance instead of msm_irqbalance.
-* Backported Binder from msm-5.15.
-* Added support for Fuse Passthrough.
+* Update dtc to upstream version `v1.7.0-60-g95c74d7`.
+* Optimize various compiler-specific instructions.
+* Fix all KASAN warnings.
+* Fix multiple memory leaks.
+* Optimize memory and string utility functions.
+* Fix various compiler warnings.
+* Improve graphics rendering performance.
+* Switch to SBalance instead of msm_irqbalance.
+* Backport Binder from msm-5.15.
+* Add support for Fuse Passthrough.
 * Set the default I/O scheduler to SSG.
-* Added HPB driver for SK Hynix UFS variants (8/256 GB).
-* Upstreamed UFS to msm-5.10.
-* Updated LZ4 to v1.9.4 with V8 ASM decompression acceleration.
-* Upstreamed multiple Qualcomm OSS drivers (thanks to Divyanshu-Modi).
-* Aligned inline encryption for UFS with the upstream version.
-* Backported zsmalloc from mainline.
-* Backported zram from mainline.
-* Hardcoded zram size to 4GB.
-* Upstreamed uid_sys_stats to android-mainline.
-* Optimized F2FS's garbage collector.
-* Removed excessive debugging bloat.
-* Fixed and silenced excessive spam in dmesg.
-* Removed CAF's tracing from EXT4 and F2FS.
-* Switched to stack memory and kmem cache usage in multiple drivers to minimize dynamic memory allocation.
-* Mitigated msm-5.4's memory management issues.
-* Backported scheduler from msm-5.15.
-* Backported RCU from msm-5.10.
-* Recalculated the energy model manually using CoreMark.
-* Added Capacity Aware Superset Scheduler.
-* Backported EEVDF from mainline.
+* Add HPB driver for SK Hynix UFS variants (8/256 GB).
+* Upstream UFS to msm-5.10.
+* Update LZ4 to v1.9.4 with V8 ASM decompression acceleration.
+* Upstream multiple Qualcomm OSS drivers (thanks to Divyanshu-Modi).
+* Align inline encryption for UFS with the upstream version.
+* Backport zsmalloc from mainline.
+* Backport zram from mainline.
+* Hardcode zram size to 4GB.
+* Upstream uid_sys_stats to android-mainline.
+* Optimize F2FS's garbage collector.
+* Remove excessive debugging bloat.
+* Fix and silence excessive spam in dmesg.
+* Remove CAF's tracing from EXT4 and F2FS.
+* Switch to stack memory and kmem cache usage in multiple drivers to minimize dynamic memory allocation.
+* Mitigate msm-5.4's memory management issues.
+* Backport scheduler from msm-5.15.
+* Backport RCU from msm-5.10.
+* Recalculate the energy model manually using CoreMark.
+* Add Capacity Aware Superset Scheduler.
+* Backport EEVDF from mainline.
 * Set s2idle as the default sleep state instead of deep suspend.
-* Enforced WFI idle state when the screen is on.
-* Enabled threaded NAPI for IPA.
-* Added KernelSU-Legacy (fork by rsuntk), which is disabled by default in the repository.
+* Enforce WFI idle state when the screen is on.
+* Enable threaded NAPI for IPA.
+* Add KernelSU-Legacy (fork by rsuntk), which is disabled by default in the repository.
