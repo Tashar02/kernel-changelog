@@ -30,6 +30,10 @@ xiaomi-qgki_defconfig and redwood.config
 
 ## Changelogs
 
+**v2.1 - 17/07/2025**
+
+* Fix kernel panic caused by kshrinkd by temporarily moving slab shrinkers out of kshrinkd and getting rid of it (until we get a solution).
+
 **v2.0 - 16/07/2025**
 
 * Rebase kernel on `LA.UM.9.14.r1-26100-LAHAINA.QSSI15.0` with wifi, audio, camera, dataipa, datarmnet, display, video driver from `LA.UM.9.14.r1-26000-LAHAINA.QSSI15.0`.
