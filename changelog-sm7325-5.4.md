@@ -4,7 +4,7 @@
 Kernel: Scarlet
 Type: Stable
 Devices: POCO X5 Pro / Redmi Note 12 Pro Speed (redwood)
-Compiler: Eva GCC 16.0.0 with Eva Binutils (GNU ld) 2.44.50
+Compiler: aarch64-linux-gnu-gcc (GCC) 15.1.0 with GNU ld (GNU Binutils) 2.44
 Compiler specific optimization: DCE and GCC LTO
 Kernel Source: https://github.com/Atom-X-Devs/scarlet_xiaomi_sm7325.git
 Kernel Branch: redwood
@@ -29,6 +29,60 @@ xiaomi-qgki_defconfig and redwood.config
 * After flashing, unlock the device and let it idle for 2-3 minutes to allow Android processes to properly initialize before using it.
 
 ## Changelogs
+
+**v3.0 - 26/09/2025**
+* Merge branch `upstream/rcu-5.10` into `redwood`.
+* Merge branch `upstream/sched-6.1` into `redwood`.
+* Upstream USB, mm, timer, ext4, f2fs to `linux v5.4.299`.
+* Migrate to kmap_local_page() from kmap_atomic().
+* Fix incorrect backport that made zram asynchronous.
+* Upstream zsmalloc to mainline.
+* Add Kcompressd for accelerated memory compression.
+* Revert "mm: mmap: merge vma after call_mmap() if possible" patchset to fix potential memory corruption.
+* Fix memory corruption in madvise caused by stale pte.
+* Import various madvise fixes from mainline.
+* Backport some GPU rice from msm-5.10.
+* Upstream EEVDF to mainline.
+* Enable fair group sched to minimize cold app launch time.
+* Increase DVFS headroom boost multiplier to 1/4.
+* Restore tasks affinity while moving across cpusets.
+* Improve runtime of cpufreq_stats_create_table().
+* Fix buffer overflow detection in trans_stats().
+* Recalculate energy model for better accuracy.
+* Partially upstream rtc-pm8xxx to msm-5.15 and mainline.
+* Fix illegal RCU lock usage in handle_sepolicy() of KernelSU.
+* Remove unnecessary RCU dereference in get_policydb() of KernelSU.
+* Fix uninitialized mutex lock in ion.
+* Fix uninitialized mutex lock in qcom-i2c-pmic.
+* Fix various lockdep warnings.
+* Fix a false-positive "RCU lock not being held" warning in sched.
+* Fix illegal spinlock usage in camera.
+* Enable various memory sensitive qcom loggers to mitigate potential memory corruption.
+* Defer enabling IRQ in AOSS driver until QMP link is ready to prevent kernel panic caused by synchronous external abort.
+* Switch to kvzalloc() for encoding and decodign QMI message to fix order-4 page allocation failures during modem restart.
+* Switch to kvzalloc() for tethering stats collection to fix order-3 page allocation failure during prolonged period of USB tethering usage.
+* Switch to kvzalloc() for read log ring buffer to fix a rare order-5 page allocation failure.
+* Fix false-positive warning for device endpoint command timeouts from USB.
+* Fix use-after-free in USB, ext4, f2fs, and crypto-qti.
+* Replace collect_mounts()/drop_collected_mounts() with a safer variant.
+* Fix OOB read in ext4, and qti-battery-charger.
+* Partially upstream Incremental fs to android-mainline.
+* Fix link startup failure for single-lane operation in ufs.
+* Fix wild-memory-access in iommu.
+* Fix PMD offset calculation for non-2M aligned start aperture in dma-mapping-fast.
+* Fix various potential NULL pointer dereferences.
+* Fix memory leak in USB dwc3-msm.
+* Fix various warnings by smatch and clang.
+* Add kernel-enforced timeout option for fuse server requests.
+* Use freezable wait in fuse_get_req() and request_wait_answer().
+* Implement charging status check in goodix touchscreen driver using querying USB_ONLINE property.
+* Remove obsolete charging status check in focaltech 3680 touchscreen driver.
+* Enable transition to LP2 for display since it's used by our video-mode panels.
+* Disable LLVM's new noisy `builtin-wcslen` and `default-const-init-unsafe` warnings.
+* Bring cosmetic changes to commit hash for localversion auto.
+* Upstream KernelSU to rsuntk/KernelSU at commit 05b256639c3.
+* Allow hardware updates of Access and Dirty page.
+* Warn on NULL pointer before panicking from fpsimd.
 
 **v2.1 - 17/07/2025**
 
