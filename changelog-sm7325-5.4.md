@@ -4,8 +4,8 @@
 Kernel: Scarlet
 Type: Stable
 Devices: POCO X5 Pro / Redmi Note 12 Pro Speed (redwood)
-Compiler: aarch64-linux-gnu-gcc (GCC) 15.1.0 with GNU ld (GNU Binutils) 2.44
-Compiler specific optimization: DCE and GCC LTO
+Compiler: Android clang 20.0.0 with LLD 20.0.0, based on r547379
+Compiler specific optimization: DCE and Clang Full LTO
 Kernel Source: https://github.com/Atom-X-Devs/scarlet_xiaomi_sm7325.git
 Kernel Branch: redwood
 ```
@@ -29,6 +29,14 @@ xiaomi-qgki_defconfig and redwood.config
 * After flashing, unlock the device and let it idle for 2-3 minutes to allow Android processes to properly initialize before using it.
 
 ## Changelogs
+
+**v3.1 - 19/10/2025**
+* Upstream zram to mainline.
+* Increase zRAM size to 5GB.
+* Report correct key code of headset buttons.
+* Remove explicit warning on NULL pointer from fpsimd.
+* Upstream KernelSU to rsuntk/KernelSU at commit 9a7c84bfbc1 which includes fix to kernel panic coming from fpsimd.
+* Compile kernel using Android (AOSP) clang 20.0.0, based on r547379.
 
 **v3.0 - 26/09/2025**
 * Merge branch `upstream/rcu-5.10` into `redwood`.
