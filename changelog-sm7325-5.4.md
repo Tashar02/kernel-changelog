@@ -30,6 +30,30 @@ xiaomi-qgki_defconfig and redwood.config
 
 ## Changelogs
 
+**v6.0 - 10/07/2025**
+* Merge CLO tag `LA.UM.9.14.1.r1-21200-QCM6490.QISI15.0` (Linux tag is at v5.4.302 state).
+* Add support for checkpoint restore capability that is required for Android 17 (for Chrome-based browsers to work).
+* Fix [CVE-2026-43499](https://github.com/advisories/GHSA-cqc6-9f34-295v).
+* Update DTC to upstream version `v1.8.1-15-g66e1201`.
+* Update CFI from upstream (Thanks to Alex Winkowski).
+* Bring some more scheduler improvements from mainline.
+* Upstream EEVDF to linux tip/master.
+* Use actual object size to detect spans in zsmalloc.
+* Simplify read begin/end logic in zsmalloc.
+* Return -EBUSY for zspage migration lock contention in zsmalloc.
+* Fix vmstat_shepherd double-scheduling vmstat_update.
+* Avoid unmap after kgsl system suspend.
+* Return success for cmo of dummy clients in ion dma-buf.
+* Nullify display modes after kfree.
+* Fix division by zero during ESD recovery.
+* Disable capacitance data support of goodix touchscreen for production.
+* Fix accuracy of bsl_vol_default for AW8692X haptics.
+* Add support for AW869X haptics.
+* Upstream KernelSU to `v32579`. Only official KernelSU manager and KowSU manager is usable now.
+* Get rid of manual KernelSU hooks in kernel in favor of syscall table tampering from within KernelSU.
+* Enable RCU boost.
+* Re-enable Polly optimizer since we've switched to Neutron Clang 23.0.0 which has Polly optimizer fixed for zstd.
+
 **v5.0 - 16/05/2025**
 * Upstream RCU to android14-5.15-lts.
 * Pull fixes to lazy RCU from mainline.
