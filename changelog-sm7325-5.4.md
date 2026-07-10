@@ -4,7 +4,7 @@
 Kernel: Scarlet
 Type: Stable
 Devices: POCO X5 Pro / Redmi Note 12 Pro Speed (redwood)
-Compiler: Android clang 22.0.2 with LLD 22.0.2, based on r596125
+Compiler: Neutron clang 23.0.0 with Neutron LLD 23.0.0
 Compiler specific optimization: DCE and Clang Full LTO
 Kernel Source: https://github.com/Atom-X-Devs/scarlet_xiaomi_sm7325.git
 Kernel Branch: redwood
@@ -24,7 +24,7 @@ xiaomi-qgki_defconfig and redwood.config
 
 ## Flashing Process
 
-* Reboot to recovery, connect to adb and `adb sideload Scarlet-*.zip` from platform-tools.
+* Reboot to recovery (must be from a userdebug / eng rom build), connect to adb and `adb sideload Scarlet-*.zip` from platform-tools.
 * Alternatively, use Franco Kernel Manager's built-in flasher to flash the kernel (requires root). 
 * After flashing, unlock the device and let it idle for 2-3 minutes to allow Android processes to properly initialize before using it.
 
